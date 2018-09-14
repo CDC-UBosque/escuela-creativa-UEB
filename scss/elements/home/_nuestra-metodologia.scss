@@ -1,0 +1,106 @@
+// -----------------------------------------------------------------------
+// ----------------------- nuestra metodologia ----------------------- //
+
+// container general
+.path-frontpage{
+	
+	.main-container{
+		
+		.row{
+			
+			> section{
+			    
+			    .region-content{
+				    
+				    section{
+					    
+					    &:nth-child(4){
+						    padding: 5rem 0 0;
+						    
+						    .field--name-body{
+							    
+							    > div{
+								    @include inline-block(top);
+									@include grid-porcentaje(6);
+									float: left;
+									
+									figure{
+										@include inline-block(top);
+										@include grid-porcentaje(5);
+										width: 44%;
+										padding: 0;
+										margin: 1rem 4rem 2rem 0;
+										position: relative;
+										&::before,
+										&::after {
+										    content: "";
+										    background: $color_ec_mag;
+										    display: block;
+										    //width: $bg-demasia-width;
+										    width: 3%;
+										    height: 80%;
+										    position: absolute;
+										    top: 10%;
+										    left: -3%;
+										}
+										&::after {
+										    left: auto;
+										    right: -3%;
+										}
+										
+										&:nth-child(even){
+											margin-right: 0;
+										}
+											 
+									}
+								    
+							    }
+							    
+							    p{
+								    color: $color_brand_white;
+								    @include inline-block(top);
+									@include grid-porcentaje(6);
+									float: right;
+									font-family: $font-basel;
+								    
+								    &:nth-child(2){
+									    
+										font-family: $font-AG-black;
+										font-size: $font-titles-xl;
+										margin-bottom: 4rem;
+										margin-top: 2rem;
+										
+								    }
+								    
+								    &:nth-child(4),
+								    &:last-child{
+									    //@include inline-block(top);
+									    display: table;
+										@include grid-porcentaje(7);
+										padding: 3rem 0 0;
+										margin: auto;
+										float: none;
+										text-align: center;
+									    a{
+										    @include buton-s;
+									    }
+									    
+								    }
+								    
+							    }
+							    
+						    }
+						    
+					    }
+					    
+				    }
+				    
+			    }
+    
+			}
+			
+		}
+		
+	}
+
+}

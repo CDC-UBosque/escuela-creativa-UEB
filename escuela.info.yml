@@ -15,6 +15,7 @@ regions:
   content: 'Content'
   sidebar_first: 'Primary'
   sidebar_second: 'Secondary'
+  contac_footer: 'Contact Footer'
   footer: 'Footer'
   page_top: 'Page top'
   page_bottom: 'Page bottom'

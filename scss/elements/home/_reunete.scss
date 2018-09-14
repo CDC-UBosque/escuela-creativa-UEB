@@ -1,0 +1,145 @@
+// -----------------------------------------------------------------------
+// ----------------------- experiencias personalizadas ----------------------- //
+
+// container general
+.path-frontpage{
+	
+	.main-container{
+		
+		.row{
+			
+			> section{
+			    
+			    .region-content{
+				    
+				    section{
+					    
+					    &:nth-child(3){
+						    @include inline-block(top);
+							@include grid-porcentaje(6);
+						    background: $color_brand_white;
+						    position: relative;
+						    border-radius: 0;
+						    border: 0px;
+							padding: 5rem 0 14rem;
+							display: inline-block;
+							margin-top: -1rem;
+						    &::before,
+						    &::after {
+						        content: "";
+						        background: $color_brand_white;
+						        display: block;
+						        //width: $bg-demasia-width;
+						        width: 400%;
+						        height: 100%;
+						        position: absolute;
+						        top: 0;
+								left: 100%;
+						    }
+						    &::after {
+						        left: auto;
+						        right: 100%;
+						        z-index: -1;
+						    }
+						    
+						    // image
+						    .field--name-field-imagen-del-bloque {
+								width: 46%;
+								//box-shadow: 0 0 20px rgba(0,0,0,0.6);
+								padding: 0;
+								position: relative;
+								&::before,
+							    &::after {
+							        content: "";
+							        background: $color_ec_mag;
+							        display: block;
+							        //width: $bg-demasia-width;
+							        width: 3%;
+							        height: 80%;
+							        position: absolute;
+							        top: 10%;
+							        left: -3%;
+							    }
+							    &::after {
+							        left: auto;
+							        right: -3%;
+							    }
+						    }
+						    
+						    // title
+						    .field--name-field-titulo-del-bloque{
+								padding-right: 4rem;
+								font-family: $font-AG-black;
+								font-size: $font-titles-xl;
+								line-height: $font-titles-xl;
+								position: relative;
+								z-index: 3;
+						    }
+						    
+						    // description
+						    .field--name-field-texto-del-bloque{
+								padding-right: 4rem;
+								margin: 2rem 0;
+								position: relative;
+								z-index: 3;
+								@include paragraph;
+						    }
+						    
+						    // link
+						    .field--name-field-enlace-del-bloque{
+								padding-right: 4rem;
+								position: relative;
+								z-index: 3;
+								
+								a{
+									@include buton-s;
+								}
+						    }
+						    
+						    > div{
+							    &:last-child{
+								    position: relative;
+								    z-index: 2;
+									margin-top: 10rem;
+								    a{
+									    @include buton-s-yellow;
+								    }
+								    &:after{
+										background: url(../images/svg/ilustracion-2.svg);
+										position: absolute;
+									    width: 3138px;
+									    height: 1506px;
+										top: -43rem;
+									    content: "";
+									    left: -208%;
+									    z-index: 0;
+										background-size: cover;
+									}
+									
+									&:before{
+										background: url(../images/svg/arrow-down.svg);
+										position: absolute;
+									    width: 62px;
+									    height: 45px;
+									    top: -7rem;
+									    content: "";
+									    left: 0;
+									    z-index: 0;
+									}
+									
+							    }
+						    }
+						    
+					    }
+					    
+				    }
+				    
+			    }
+    
+			}
+			
+		}
+		
+	}
+
+}

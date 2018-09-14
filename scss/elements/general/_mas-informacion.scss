@@ -1,0 +1,209 @@
+// -----------------------------------------------------------------------
+// ----------------------- mas informacion home ----------------------- //
+
+@mixin input-form{
+    box-shadow: none;
+    border: 0px;
+    padding: 2rem;
+    height: auto;
+    font-size: 16px;
+}
+
+.path-frontpage{
+	
+	.footer {
+		border-top: 0px;
+		padding-top: 0;
+		
+		.region-footer{
+			
+			section{
+				
+				&:nth-child(2){
+					color: $color_brand_white;
+					margin-bottom: 40rem;
+					text-align: center;
+					
+					// star form section
+					form{
+						@include inline-block(top);
+						@include grid-porcentaje(10);
+						@include paragraph;
+						font-family: $font-basel;
+						
+						// more info text
+						#edit-texto-de-mas-informacion{
+							margin: 2rem 0 4rem;
+							@include inline-block(top);
+							@include grid-porcentaje(8);
+						}
+						
+						// name
+						.form-item-nombre-completo{
+							@include inline-block(top);
+							@include grid-porcentaje(6);
+							float: left;
+							
+							input{
+								@include input-form;
+							}
+							
+						}
+						
+						// phone
+						.form-item-telefono{
+							@include inline-block(top);
+							@include grid-porcentaje(6);
+							float: left;
+							
+							input{
+								@include grid-porcentaje(12);
+								@include input-form;
+							}
+							
+						}
+						
+						//email
+						.form-item-correo-electronico{
+							@include inline-block(top);
+							@include grid-porcentaje(6);
+							float: left;
+							
+							input{
+								@include input-form;
+							}
+							
+						}
+						
+						//doc
+						.form-item-documento-de-identidad{
+							@include inline-block(top);
+							@include grid-porcentaje(6);
+							float: left;
+							
+							input{
+								@include grid-porcentaje(12);
+								@include input-form;
+							}
+							
+						}
+						
+						input[type="checkbox"]{
+							display: block;
+						}
+						
+						// checkbox
+						#edit-deseo-realizar-la-inscripcion--wrapper{
+							@include inline-block(top);
+							@include grid-porcentaje(12);
+							float: none;
+							text-align: center;
+							margin: 1rem 0;
+							
+							legend{
+								color: $color_brand_white;
+								@include paragraph;
+								font-family: $font-basel;
+								font-weight: 100;
+								@include inline-block(top);
+								//@include grid-porcentaje(8);
+								float: left;
+								width: auto;
+							}
+							
+							.fieldset-wrapper{
+								@include inline-block(top);
+								//@include grid-porcentaje(4);
+								float: left;
+								
+								.js-webform-checkboxes{
+									
+									div{
+										
+										&:first-child{
+											@include inline-block(top);
+											@include grid-porcentaje(6);
+											float: left;
+											margin:  0;
+										}
+										
+										&:last-child{
+											@include inline-block(top);
+											@include grid-porcentaje(6);
+											float: left;
+											margin:  0;
+										}
+										
+									}
+									
+								}
+								
+							}
+							
+						}
+						
+						// autorizo
+						.form-item-autorizo-a-la-universidad-el-bosque-para-el-envio-de-informacion{
+							@include inline-block(top);
+							font-family: $font-serif-italic;
+							float: left;
+							width: auto;
+						}
+						
+						// terminos y condiciones
+						#edit-terminos-y-condiciones{
+							@include inline-block(top);
+							@include paragraph;
+							font-family: $font-basel;
+							font-size: 13px;
+							letter-spacing: 1.5px;
+							float: left;
+							width: auto;
+							margin-bottom: 0;
+						    margin-top: 0.7rem;
+						    margin-left: 1rem;
+							
+							a{
+								color: $color_brand_white;
+								
+								&:after{
+									visibility: visible;
+									width: 100%;
+									background: $color_brand_white;
+								}
+								
+								&:hover{
+									&:after{
+										visibility: visible;
+										width: 0%;
+									}
+								}
+								
+							}
+							
+						}
+						
+						// send button
+						.webform-actions{
+							@include inline-block(top);
+							@include grid-porcentaje(12);
+							text-align: center;
+							margin-top: 1rem;
+							
+							button{
+								@include buton-s-white-line;
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}

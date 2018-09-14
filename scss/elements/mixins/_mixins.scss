@@ -1,0 +1,239 @@
+@mixin repo-classes {
+	@include inline-block(top);
+	@include grid-porcentaje(3);
+	width: 21%;
+	background: $color_brand_white;
+	position: relative;
+	border-radius: 0;
+	border: 0px;
+	padding: 0;
+    margin: 1rem 2rem 5rem;
+    box-shadow: 0px 0px 14px rgba(0,0,0,0.3);
+	text-align: center;
+	&::before,
+	&::after {
+	    content: "";
+	    background: $color_ec_mag;
+	    display: block;
+	    width: 3%;
+	    height: 80%;
+	    position: absolute;
+	    top: 10%;
+	    left: -3%;
+	}
+	&::after {
+	    left: auto;
+	    right: -3%;
+	}
+}
+
+@mixin repo-classes-txt{
+	margin: 1rem 0 3rem;
+					
+	a{
+		color: $color_ec_purple;
+		font-family: $font-baser;
+		font-size: $font-txt-xl;
+		margin: 1rem 0;
+		&:after{
+			display: none;
+		}
+	}
+	
+}
+
+@mixin repo-classes-link{
+	position: absolute;
+	width: 100%;
+	bottom: -2rem;
+	
+	.field-content{
+		
+		a{
+			@include buton-s-white;
+		}
+		
+	}	
+	
+}
+
+@mixin links-hover{
+	&:after{
+		position: absolute;
+		content: "";
+		height: 2px;
+		width: 0%;
+		left: 0%;
+		background: $color_ec_mag;
+		bottom: 0%;
+		visibility: hidden;
+	}
+	&:hover, &:focus{
+		text-decoration: none;
+		color: $color_ec_mag;
+		&:after{
+			visibility: visible;
+			width: 100%;
+			bottom: 0%;
+		}
+	}
+}
+
+@mixin links{
+	color: $color_ec_mag;
+	font-family: $font-AG-regular;
+	position: relative;
+	&:hover{
+		text-decoration: none;
+	}
+	@include links-hover;
+}
+
+@mixin links-menu{
+	color: $color-font;
+	font-family: $font-AG-regular;
+	position: relative;
+	&:hover{
+		text-decoration: none;
+	}
+	
+	&:after{
+		position: absolute;
+	    content: "";
+	    height: 6px;
+	    width: 0%;
+	    left: 0%;
+	    background: url(../images/svg/menu-hover.svg);
+	    background-repeat: no-repeat;
+	    bottom: 4%;
+	    visibility: hidden;
+	}
+	&:hover, &:focus{
+		text-decoration: none;
+		//color: $color_ec_mag;
+		&:after{
+			visibility: visible;
+			width: 100%;
+			//bottom: 0%;
+		}
+	}
+	
+}
+
+@mixin bg-carrusel{
+	display: inline-block;
+	padding: 0;
+	background: $color_brand_white;
+	margin-top: 9rem;
+	box-shadow: 0 0 80px rgba(0,0,0,0.6);
+	border: 0;
+	border-radius: 0;
+	position: relative;
+	width: 100%;
+	
+	&:before{
+	    content: "";
+		position: absolute;
+	    left: -7%;
+	    top: 16%;
+		background: url(../images/svg/mancha-verde-1.svg);
+		background-repeat: no-repeat;
+	    width: 156px;
+	    height: 315px;
+		z-index: -1;
+	}
+	
+	&:after{
+	    content: "";
+		position: absolute;
+		background: url(../images/svg/mancha-verde-2.svg);
+		background-repeat: no-repeat;
+	    width: 156px;
+	    height: 315px;
+	    right: -10%;
+	    top: 16%;
+	    z-index: -1;
+	}
+}
+
+@mixin title-carrusel{
+	@include grid-porcentaje(4);
+	float: left;
+	margin-top: 5rem;
+	margin-left: 5rem;
+	font-family: $font-AG-black;
+	color: $color-font;
+	font-size: $font_banner;
+	line-height: $font_banner;
+	letter-spacing: -1px;
+	
+	a{
+		font-family: $font-AG-black;
+		color: $color-font;
+		font-size: $font_banner;
+		line-height: $font_banner;
+		letter-spacing: -1px;
+		&:after{
+	        display: none;
+	    }
+	}
+	
+	@media screen and (min-width: $breakpoint_1){
+		margin-top: 1rem;
+	    margin-left: 2rem;
+		font-size: 3.4em;
+		line-height: 1em;
+		a{
+			font-size: 1em;
+			line-height: 1em;
+		}
+	}
+	
+}
+
+@mixin description-carrusel{
+	@include grid-porcentaje(4);
+	float: left;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+	margin-left: 5rem;
+	font-size: $font_banner_sub;
+	
+	@media screen and (min-width: $breakpoint_1){
+	    margin-left: 2rem;
+	}
+	
+}
+
+@mixin links-carrusel{
+	@include grid-porcentaje(4);
+	float: left;
+	margin-left: 5rem;
+	margin-top: 1rem;
+	
+	a{
+		@include buton-m;
+	}
+	
+	@media screen and (min-width: $breakpoint_1){
+	    margin-left: 2rem;
+	}
+	
+}
+
+@mixin image-carrusel{
+	@include grid-porcentaje(7);
+	float: right;
+	position: relative;
+	padding: 0;
+	&:after{
+		content: "";
+		position: absolute;
+		left: 0;
+		top:0;
+		background: url(../images/svg/rotabanner-1.svg);
+		background-repeat: no-repeat;
+		width: 153px;
+	    height: 400px;
+	}
+}
