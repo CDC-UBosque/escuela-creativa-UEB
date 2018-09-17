@@ -14,7 +14,8 @@
 				margin-top: 20rem;
 				
 				&:before{
-					background: url(../images/svg/ilustracion-1.svg);
+					//background: url(../images/svg/ilustracion-1.svg);
+					background: url(../images/svg/ilustracion-1.png);
 					position: absolute;
 				    width: 2111px;
 				    height: 700px;
@@ -22,6 +23,27 @@
 				    content: "";
 				    right: -95rem;
 				    z-index: 1;
+				    background-size: cover;
+				    image-rendering: pixelated;
+				    
+				    @media screen and (max-width: $breakpoint_2){
+					    right: -112rem;
+					    width: 2000px;
+					    height: 600px;
+					    top: -49rem;
+				    }
+				    
+				    @media screen and (max-width: $breakpoint_3){
+					    right: -122rem;
+					    width: 1780px;
+					    height: 580px;
+					    top: -43.6rem;
+				    }
+				    
+				    @media screen and (max-width: $breakpoint_4){
+					    right: -150rem;
+				    }
+				    
 				}
 			    
 			    .region-content{
@@ -64,11 +86,20 @@
 							    max-width: 100%;
 							    float: left;
 								box-shadow: 0 0 20px rgba(0,0,0,0.6);
-							    
-								  //background: $color_brand_white;
-								  //position: relative;
-								  //margin: 1rem 2rem;
-								 &:before{
+								margin-bottom: 2rem;
+								
+								@media screen and (max-width: $breakpoint_3){
+									@include grid-porcentaje(10);
+									padding-bottom: 46.25%;
+									float: none;
+								}
+								
+								@media screen and (max-width: $breakpoint_4){
+									@include grid-porcentaje(12);
+									padding-bottom: 56.25%;
+								}
+								
+								&:before{
 								      content: "";
 								      background: $color_ec_mag;
 								      display: block;
@@ -98,16 +129,36 @@
 								font-family: $font-AG-black;
 								font-size: $font-titles-xl;
 								line-height: $font-titles-xl;
+								word-break: break-word;
+								
+								@media screen and (max-width: $breakpoint_3){
+									@include grid-porcentaje(10);
+									float: none;
+								}
+								
+								@media screen and (max-width: $breakpoint_4){
+									@include grid-porcentaje(12);
+								}
+								
 						    }
 						    
 						    // description
 						    .field--name-field-texto-del-bloque{
 							    @include inline-block(top);
 								@include grid-porcentaje(6);
-								float: right;
+								//float: right;
 								padding-left: 4rem;
 								margin: 2rem 0;
 								@include paragraph;
+								
+								@media screen and (max-width: $breakpoint_3){
+									@include grid-porcentaje(10);
+									float: none;
+								}
+								
+								@media screen and (max-width: $breakpoint_4){
+									@include grid-porcentaje(12);
+								}
 						    }
 						    
 						    // link
@@ -116,6 +167,15 @@
 								@include grid-porcentaje(6);
 								float: right;
 								padding-left: 4rem;
+								
+								@media screen and (max-width: $breakpoint_3){
+									@include grid-porcentaje(10);
+									float: none;
+								}
+								
+								@media screen and (max-width: $breakpoint_4){
+									@include grid-porcentaje(12);
+								}
 								
 								a{
 									@include buton-s;

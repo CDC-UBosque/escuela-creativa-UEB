@@ -9,8 +9,12 @@ $desktop-small: 980px;
 $desktop-medida: 1180; // tamaño descontando padding para calculo
 
 // calculos bootstrap
-//@media screen and (min-width: 992px)
-$breakpoint_1: 992px;
+$breakpoint_1: 1199px;
+$breakpoint_2: 991px;
+$breakpoint_3: 768px;
+$breakpoint_4: 500px;
+
+
 
 $color_text: #494C4D;
 

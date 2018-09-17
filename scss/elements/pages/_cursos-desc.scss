@@ -34,9 +34,18 @@
 				    right: 100%;
 				}
 				
+				@media screen and (max-width: $breakpoint_3){
+					padding-bottom: 0;
+				}
+				
 				.region-content{
 					
 					position: relative;
+					z-index: 3;
+					
+					@media screen and (max-width: $breakpoint_3){
+						padding: 0 10px;
+					}
 					
 					> div {
 						
@@ -47,8 +56,10 @@
 							.field--label{
 								font-family: $font-AG-black;
 								font-size: $font-titles-xl;
+								line-height: $font-titles-xl;
 								font-weight: initial;
 								margin-bottom: 1rem;
+								word-break: break-word;
 							}
 							
 							&:last-child{
@@ -61,8 +72,9 @@
 							.field--item{
 								font-family: $font-AG-light;
 								font-size: $font-titles-xl;
+								line-height: $font-titles-xl;
 								text-transform: uppercase;
-							    margin-top: -2rem;
+							    //margin-top: -2rem;
 							}
 						}
 						
@@ -71,6 +83,17 @@
 							@include grid-porcentaje(8);
 							float: left;
 							padding-left: 0;
+							
+							@media screen and (max-width: $breakpoint_3){
+								@include grid-porcentaje(7);
+								padding-left: 0;
+							}
+							
+							@media screen and (max-width: $breakpoint_4){
+								@include grid-porcentaje(12);
+								padding: 0;
+							}
+							
 						}
 						
 						.field--name-field-imagen-del-docente{
@@ -80,9 +103,20 @@
 							padding: 0;
 							float: left;
 							
+							@media screen and (max-width: $breakpoint_3){
+								width: 28%;
+								padding: 0;
+							}
+							
+							@media screen and (max-width: $breakpoint_4){
+								@include grid-porcentaje(10);
+								padding: 0;
+							}
+							
 							img{
 								width: 100%;
 							}
+							
 						}
 						
 					}

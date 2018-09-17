@@ -49,13 +49,22 @@
 								//box-shadow: 0 0 20px rgba(0,0,0,0.6);
 								padding: 0;
 								position: relative;
+								margin-bottom: 2rem;
+								
+								@media screen and (max-width: $breakpoint_3){
+									@include grid-porcentaje(10);
+									float: none;
+									padding: 0;
+									margin-left: 2rem;
+								}
+								
 								&::before,
 							    &::after {
 							        content: "";
 							        background: $color_ec_mag;
 							        display: block;
 							        //width: $bg-demasia-width;
-							        width: 3%;
+							        width: 10%;
 							        height: 80%;
 							        position: absolute;
 							        top: 10%;
@@ -64,6 +73,11 @@
 							    &::after {
 							        left: auto;
 							        right: -3%;
+							    }
+							    
+							    img{
+								    z-index: 1;
+								    position: relative;
 							    }
 						    }
 						    
@@ -76,16 +90,38 @@
 								font-family: $font-AG-black;
 								font-size: $font-titles-xl;
 								line-height: $font-titles-xl;
+								word-break: break-word;
+								
+								@media screen and (max-width: $breakpoint_3){
+									@include grid-porcentaje(10);
+									float: none;
+									margin-bottom: 2rem;
+								}
+								
+								@media screen and (max-width: $breakpoint_4){
+									@include grid-porcentaje(12);
+								}
+								
 						    }
 						    
 						    // description
 						    .field--name-field-texto-del-bloque{
 							    @include inline-block(top);
 								@include grid-porcentaje(6);
-								float: left;
+								//float: left;
 								padding-right: 4rem;
 								margin: 2rem 0;
 								@include paragraph;
+								
+								@media screen and (max-width: $breakpoint_3){
+									@include grid-porcentaje(10);
+									float: none;
+								}
+								
+								@media screen and (max-width: $breakpoint_4){
+									@include grid-porcentaje(12);
+								}
+								
 						    }
 						    
 						    // link
@@ -94,6 +130,15 @@
 								@include grid-porcentaje(6);
 								float: left;
 								padding-right: 4rem;
+								
+								@media screen and (max-width: $breakpoint_3){
+									@include grid-porcentaje(10);
+									float: none;
+								}
+								
+								@media screen and (max-width: $breakpoint_4){
+									@include grid-porcentaje(12);
+								}
 								
 								a{
 									@include buton-s;

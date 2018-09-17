@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------
-// ----------------------- banner ----------------------- //
+// ----------------------- Repositorio cursos ----------------------- //
 
 // container general
 .page-node-type-page{
@@ -33,6 +33,10 @@
 			        right: 100%;
 			    }
 			    
+			    @media screen and (max-width: $breakpoint_2){
+				    padding: 4rem 2rem 16rem;
+			    }
+			    
 			    // container search actions
 			    .block-views-blockbuscador-cursos-block-1{
 				    
@@ -41,6 +45,11 @@
 					    // header
 					    .view-header{
 						    @include grid-porcentaje(8);
+						    
+						    @media screen and (max-width: $breakpoint_3){
+							    @include grid-porcentaje(12);
+						    }
+						    
 					    }
 					    
 					    // filters
@@ -95,6 +104,10 @@
 					    .view-content{
 						    position: relative;
 						    z-index: 10;
+						    
+						    @media screen and (max-width: $breakpoint_4){
+								text-align: center;
+							}
 							
 							.views-row{
 								@include repo-classes;

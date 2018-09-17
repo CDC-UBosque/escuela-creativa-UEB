@@ -68,6 +68,25 @@
 					background: $color_brand_white;
 					width: 1140px;
 					
+					@media screen and (max-width: $breakpoint_1){
+						width: 940px;
+						height: 350px;
+					}
+					
+					@media screen and (max-width: $breakpoint_2){
+						width: 720px;
+						height: 270px;
+					}
+					
+					@media screen and (max-width: $breakpoint_4){
+						height: auto;
+					    display: flex;
+					    width: min-content;
+					    flex-direction: column;
+					    min-width: 340px;
+						border-left: 1px solid $color_ec_purple;
+					}
+					
 					// title
 					.views-field-title{
 						

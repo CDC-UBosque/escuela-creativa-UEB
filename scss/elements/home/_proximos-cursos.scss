@@ -64,6 +64,18 @@
 			text-align: center;
 			z-index: 3;
 			position: relative;
+			
+			@media screen and (max-width: $breakpoint_1){
+				@include grid-porcentaje(8);
+			}
+			
+			@media screen and (max-width: $breakpoint_2){
+				@include grid-porcentaje(10);
+			}
+			
+			@media screen and (max-width: $breakpoint_3){
+				@include grid-porcentaje(11);
+			}
 				
 			p{
 				font-family: $font-basel;
