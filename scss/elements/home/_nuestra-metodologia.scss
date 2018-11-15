@@ -81,13 +81,15 @@
 										@include grid-porcentaje(12);
 									}
 									
-									figure{
+									figure,
+									> div{
 										@include inline-block(top);
 										@include grid-porcentaje(5);
 										width: 44%;
 										padding: 0;
 										margin: 1rem 4rem 2rem 0;
 										position: relative;
+										background: $color_brand_white;
 										&::before,
 										&::after {
 										    content: "";
@@ -117,6 +119,25 @@
 											@media screen and (max-width: $breakpoint_4){
 												margin: 1rem auto;
 											}
+										}
+										
+										img{
+											//position: absolute;
+											z-index: 1;
+										}
+										
+										.txt-field{
+											color:$color_ec_purple;
+											font-family: $font-AG-black;
+											font-size: $font-subtitles;
+											line-height: $font-subtitles;
+											padding: 2rem 1rem !important;
+											//position: absolute;
+										    z-index: 10;
+										    top: 0;
+										    left: 0;
+										    bottom: 0;
+										    width: 100%;
 										}
 											 
 									}

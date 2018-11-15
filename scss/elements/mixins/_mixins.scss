@@ -370,7 +370,7 @@
 				image-rendering: pixelated;
 				position: absolute;
 			    width: 2477px;
-			    height: 624px;
+			    height: 652px;
 			    top: -46rem;
 			    content: "";
 			    left: -115rem;
@@ -636,6 +636,18 @@
 		
 		input{
 			@include grid-porcentaje(12);
+			@include input-form;
+		}
+		
+	}
+	
+	// inquietudes preguntas
+	.form-item-inquietudes-preguntas{
+		@include inline-block(top);
+		@include grid-porcentaje(12);
+		//float: left;
+		
+		input{
 			@include input-form;
 		}
 		

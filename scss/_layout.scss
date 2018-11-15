@@ -161,9 +161,9 @@ li:last-child {
     ul {
         //list-style-type: disc;
         li {
-            @include interna-parrafo;
+            //@include interna-parrafo;
             //padding-left: 25px;
-            @include bullet;
+            //@include bullet;
         }
     }
 }
