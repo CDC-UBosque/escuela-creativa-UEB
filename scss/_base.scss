@@ -91,6 +91,16 @@ b{
 
 p{
 	@include paragraph;
+	
+	strong{
+		font-family: $font-AG-black;
+		font-weight: initial;
+	}
+	
+	i{
+		font-style: italic;
+	}
+	
 }
 
 a{

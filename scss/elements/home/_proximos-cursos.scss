@@ -50,6 +50,7 @@
 				// more link
 				.views-field-view-node{
 					@include repo-classes-link;
+					z-index: 10;
 				}
 				
 			}

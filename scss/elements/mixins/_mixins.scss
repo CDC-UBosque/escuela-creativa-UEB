@@ -112,6 +112,7 @@
 	color: $color-font;
 	font-family: $font-AG-regular;
 	position: relative;
+	font-size: $font-txt-l;
 	&:hover{
 		text-decoration: none;
 	}
@@ -339,19 +340,31 @@
         position: absolute;
         top: 0;
         left: 100%;
+        z-index: -1;
+        @media screen and (max-width: $breakpoint_1){
+	        height: 140%;
+        }
         @media screen and (max-width: $breakpoint_3){
 	        width: 150%;
         }
     }
     &::after {
         left: auto;
-        right: 100%;
+        right: 100%;	
+        
+        @media screen and (max-width: $breakpoint_1){
+	    left: auto;
+	    right: -2%;
+	    z-index: -1;
+	    width: 130%;
+        }
+        
     }
     
     @include inline-block(top);
 	@include grid-porcentaje(6);
 	float: left;
-	padding: 3rem 10px;
+	padding: 3rem 10px 1rem;
 	
 	@media screen and (max-width: $breakpoint_4){
 		@include grid-porcentaje(12);
@@ -370,25 +383,25 @@
 				image-rendering: pixelated;
 				position: absolute;
 			    width: 2477px;
-			    height: 652px;
+			    height: 667px;
 			    top: -46rem;
 			    content: "";
 			    left: -115rem;
-			    z-index: 1;
+			    z-index: -1;
 			    background-size: cover;
 			    
 			    @media screen and (max-width: $breakpoint_1){
 				    width: 2239px;
-				    height: 585px;
-				    top: -42rem;
-				    left: -111rem;
+				    height: 725px;
+				    top: -49rem;
+				    left: -119rem;
 			    }
 			    
 			    @media screen and (max-width: $breakpoint_2){
-				    width: 2087px;
-				    height: 554px;
-				    top: -39rem;
-				    left: -119rem;
+				    //width: 2087px;
+				    //height: 554px;
+				    //top: -39rem;
+				    //left: -119rem;
 			    }
 			    
 			    @media screen and (max-width: $breakpoint_3){
@@ -424,11 +437,14 @@
         content: "";
         background: $color_brand_white;
         display: block;
-        width: 40%;
+        width: 6%;
         height: 100%;
         position: absolute;
         top: 0;
         left: 100%;
+        @media screen and (max-width: $breakpoint_1){
+	        width: 100%;
+        }
         @media screen and (max-width: $breakpoint_4){
 	        width: 100%;
         }
@@ -445,7 +461,14 @@
     @include inline-block(top);
 	@include grid-porcentaje(4);
 	float: left;
-	padding: 2rem 10px;
+	padding: 0rem 10px 2rem;
+	z-index: 1;
+	
+	@media screen and (max-width: $breakpoint_1){
+		@include inline-block(top);
+		@include grid-porcentaje(6);
+		padding: 2rem 10px;
+	}
 	
 	@media screen and (max-width: $breakpoint_3){
 		@include grid-porcentaje(6);
@@ -457,7 +480,8 @@
 		padding: 2rem 10px;
 	}
 	
-	.field--name-field-imagen-svg{
+	.field--name-field-imagen-svg,
+	.field--name-field-campo{
 		
 		.field--item{
 			@include inline-block(top);
@@ -471,19 +495,26 @@
 			
 			// escuela logo
 			img{
-				@include inline-block(top);
-				@include grid-porcentaje(6);
-				float: left;
+				//@include inline-block(top);
+				//@include grid-porcentaje(6);
+				//float: left;
+				margin: 1rem;
+				
+				
 			}
 			
 			// logo ueb
 			a{
-				@include inline-block(top);
-				@include grid-porcentaje(6);
-				float: left;
+				//@include inline-block(top);
+				//@include grid-porcentaje(6);
+				//float: left;
+				
+				&:after{
+					display: none;
+				}
 				
 				img{
-					@include grid-porcentaje(12);
+					//@include grid-porcentaje(12);
 				}
 				
 			}
@@ -507,25 +538,37 @@
         content: "";
         background: $color_brand_white;
         display: block;
-        width: 0;
+        width: 0%;
         height: 100%;
         position: absolute;
         top: 0;
         left: 100%;
+		z-index: -3;
+        @media screen and (max-width: $breakpoint_1){
+		    width: 100%;
+		    top: -0.2rem;
+		    height: 7.9rem;
+        }
         @media screen and (max-width: $breakpoint_3){
 	        width: 100%;
         }
     }
     &::after {
         left: auto;
-		right: 7%;
+		right: 0%;
 		width: 400%;
     }
     
-    @include inline-block(top);
+    	display: table;
 	@include grid-porcentaje(12);
-	//float: left;
+	margin: auto;
 	padding: 2rem;
+	z-index: -3;
+	
+	@media screen and (max-width: $breakpoint_1){
+		z-index: 1;
+		    padding: 2rem 2rem 0;
+	}
 	
 	.field--name-body{
 		position: relative;
@@ -770,4 +813,213 @@
 		
 	}
 	
+}
+
+
+// ------------------------ Display grid cross browser settings --------------------------- //
+// --------------------------------------------------- //
+// display grid parent
+@mixin display-grid{
+	
+	@supports (display: grid) {
+		display: grid;
+	}
+	
+	@supports (-ms-ime-align: auto) {
+		display: grid;							
+	}
+	
+	@supports not (display: grid){
+		display: inline-block;
+	}
+	
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
+		display: -ms-grid;		
+	}
+	
+}
+
+// display flex parent
+@mixin display-flex{
+	
+	@supports (display: flex) {
+		display: flex;
+	}
+	
+	@supports (-ms-ime-align: auto) {
+		display: flex;							
+	}
+	
+	@supports not (display: flex){
+		display: inline-block;
+		width: 100%;
+	}
+	
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
+		display: -ms-grid;	
+		width: 100%;	
+	}
+	
+}
+
+
+// ------------------------ cross browsers mixins --------------------------- //
+// --------------------------------------------------- //
+
+/// Mixin to prefix a property
+/// @author Hugo Giraudel
+/// @param {String} $property - Property name
+/// @param {*} $value - Property value
+/// @param {List} $prefixes (()) - List of prefixes to print
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+ 
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+// usage
+//@include prefix(border-radius, 0px, webkit moz);
+
+
+// ------------------------ Display grid columns parent cross browser settings --------------------------- //
+// --------------------------------------------------- //
+// display grid child parents
+@mixin grid-parent-1-columns ($x1) {
+	  grid-template-columns: $x1;
+  -ms-grid-columns: $x1;
+}
+
+@mixin grid-parent-2-columns ($x1, $x2) {
+	  grid-template-columns: $x1 $x2;
+  -ms-grid-columns: $x1 $x2;
+}
+
+@mixin grid-parent-3-columns ($x1, $x2, $x3) {
+	  grid-template-columns: $x1 $x2 $x3;
+  -ms-grid-columns: $x1 $x2 $x3;
+}
+
+@mixin grid-parent-4-columns ($x1, $x2, $x3, $x4) {
+	  grid-template-columns: $x1 $x2 $x3 $x4;
+  -ms-grid-columns: $x1 $x2 $x3 $x4;
+}
+
+@mixin grid-parent-5-columns ($x1, $x2, $x3, $x4, $x5) {
+	  grid-template-columns: $x1 $x2 $x3 $x4 $x5;
+  -ms-grid-columns: $x1 $x2 $x3 $x4 $x5;
+}
+
+@mixin grid-parent-6-columns ($x1, $x2, $x3, $x4, $x5, $x6) {
+	  grid-template-columns: $x1 $x2 $x3 $x4 $x5 $x6;
+  -ms-grid-columns: $x1 $x2 $x3 $x4 $x5 $x6;
+}
+
+@mixin grid-parent-7-columns ($x1, $x2, $x3, $x4, $x5, $x6, $x7) {
+	  grid-template-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7;
+  -ms-grid-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7;
+}
+
+@mixin grid-parent-8-columns ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8) {
+	  grid-template-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8;
+  -ms-grid-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8;
+}
+
+@mixin grid-parent-9-columns ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8, $x9) {
+	  grid-template-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9;
+  -ms-grid-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9;
+}
+
+@mixin grid-parent-10-columns ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8, $x9, $x10) {
+	  grid-template-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10;
+  -ms-grid-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10;
+}
+
+@mixin grid-parent-11-columns ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8, $x9, $x10, $x11) {
+	  grid-template-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10 $x11;
+  -ms-grid-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10 $x11;
+}
+
+@mixin grid-parent-12-columns ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8, $x9, $x10, $x11, $x12) {
+	  grid-template-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10 $x11 $x12;
+  -ms-grid-columns: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10 $x11 $x12;
+}
+
+// ------------------------ Display grid rows parent cross browser settings --------------------------- //
+// --------------------------------------------------- //
+// display grid child parents
+@mixin grid-parent-1-rows ($x1) {
+	grid-template-rows: $x1;
+  -ms-grid-rows: $x1;
+}
+
+@mixin grid-parent-2-rows ($x1, $x2) {
+	  grid-template-rows: $x1 $x2;
+  -ms-grid-rows: $x1 $x2;
+}
+
+@mixin grid-parent-3-rows ($x1, $x2, $x3) {
+	  grid-template-rows: $x1 $x2 $x3;
+  -ms-grid-rows: $x1 $x2 $x3;
+}
+
+@mixin grid-parent-4-rows ($x1, $x2, $x3, $x4) {
+	  grid-template-rows: $x1 $x2 $x3 $x4;
+  -ms-grid-rows: $x1 $x2 $x3 $x4;
+}
+
+@mixin grid-parent-5-rows ($x1, $x2, $x3, $x4, $x5) {
+	  grid-template-rows: $x1 $x2 $x3 $x4 $x5;
+  -ms-grid-rows: $x1 $x2 $x3 $x4 $x5;
+}
+
+@mixin grid-parent-6-rows ($x1, $x2, $x3, $x4, $x5, $x6) {
+	  grid-template-rows: $x1 $x2 $x3 $x4 $x5 $x6;
+  -ms-grid-rows: $x1 $x2 $x3 $x4 $x5 $x6;
+}
+
+@mixin grid-parent-7-rows ($x1, $x2, $x3, $x4, $x5, $x6, $x7) {
+	  grid-template-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7;
+  -ms-grid-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7;
+}
+
+@mixin grid-parent-8-rows ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8) {
+	  grid-template-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8;
+  -ms-grid-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8;
+}
+
+@mixin grid-parent-9-rows ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8, $x9) {
+	  grid-template-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9;
+  -ms-grid-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9;
+}
+
+@mixin grid-parent-10-rows ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8, $x9, $x10) {
+	  grid-template-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10;
+  -ms-grid-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10;
+}
+
+@mixin grid-parent-11-rows ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8, $x9, $x10, $x11) {
+	  grid-template-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10 $x11;
+  -ms-grid-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10 $x11;
+}
+
+@mixin grid-parent-12-rows ($x1, $x2, $x3, $x4, $x5, $x6, $x7, $x8, $x9, $x10, $x11, $x12) {
+	  grid-template-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10 $x11 $x12;
+  -ms-grid-rows: $x1 $x2 $x3 $x4 $x5 $x6 $x7 $x8 $x9 $x10 $x11 $x12;
+}
+
+// display grid child columns
+@mixin grid-child-column ($col-start, $col-end) {
+	  grid-column: #{$col-start}/#{$col-end};
+  -ms-grid-column: $col-start;
+  -ms-grid-column-span: $col-end - $col-start;
+}
+
+// display grid child rows
+@mixin grid-child-row ($row-start, $row-end) {
+	  grid-row: #{$row-start}/#{$row-end};
+  -ms-grid-row: $row-start;
+  -ms-grid-row-span: $row-end - $row-start;
 }
